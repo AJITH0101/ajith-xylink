@@ -4,9 +4,13 @@ import girl2 from '../assets/girlnew2.png';
 
 const Trends = () => {
     const [newPoint, setNewPoint] = useState({
-        x1:null,y1:null,x2:null,y2:null,x3:null,y3:null,x4:null,y4:null,x5:null,y5:null,x6:null,y6:null,
-        x7:null,y7:null,x8:null,y8:null,x9:null,y9:null,x10:null,y10:null,x11:null,y11:null
-    })
+        x1: 150, y1: 560, x2: 250, y2: 500,
+        x3: null, y3: null, x4: null, y4: null, 
+        x5: null, y5: null, x6: null, y6: null, 
+        x7: null, y7: null, x8: null, y8: null, 
+        x9: null, y9: null, x10: null, y10: null
+    });
+    
     const [heightClass, setHeightClass] = useState({
         h1:"h-1",
         h2:"h-1",

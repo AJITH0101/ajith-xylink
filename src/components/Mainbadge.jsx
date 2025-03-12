@@ -7,10 +7,10 @@ import People from './People'
 import Timeline from './Timeline'
 import girl from '../assets/girl.jpg'
 import desert from '../assets/desert.jpg'; 
+import { useSelector } from 'react-redux'
 
 
 const Mainbadge = () => {
-
     const marketing = {
         head:"Marketing engagement",
         desc:"Description added here like this..",
@@ -23,6 +23,13 @@ const Mainbadge = () => {
         bottom:"Website Playground"
     }
 
+  const badgeSelect = useSelector((state)=>state.select)
+  const badgeArray = [<Badge image={desert} details={marketing}/> ,<Badge image={girl} details={embeds}/> ,<Numbers/>,<Trends/>,<People/>,<Timeline/> ]
+
+  console.log(badgeSelect.stage);
+  
+
+    
   return (
     <div className='border border-stone-700 rounded-lg w-2/6 h-80 bg-stone-900 flex flex-row'>
         <div className='w-48 h-full bg-stone-950 border-r border-stone-700 rounded-l-lg flex justify-center'>
@@ -30,10 +37,11 @@ const Mainbadge = () => {
         </div>
         <div className='w-full flex justify-center item-center mt-4'>
             {/* <Badge image={girl} details={embeds}/>  */}
-          <Numbers/> 
+          {/* <Numbers/>  */}
             {/* <Trends/>  */}
             {/* <People/>  */}
             {/* <Timeline/> */}
+            {badgeArray[badgeSelect.stage]}
         </div>
     </div>
   )
