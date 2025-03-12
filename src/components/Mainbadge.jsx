@@ -36,12 +36,7 @@ const Mainbadge = () => {
             <Selector/> 
         </div>
         <div className='w-full flex justify-center item-center mt-4'>
-            {/* <Badge image={girl} details={embeds}/>  */}
-          {/* <Numbers/>  */}
-            {/* <Trends/>  */}
-            {/* <People/>  */}
-            {/* <Timeline/> */}
-            {badgeArray[badgeSelect.stage]}
+              {badgeArray[badgeSelect.stage]}
         </div>
     </div>
   )

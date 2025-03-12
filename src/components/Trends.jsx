@@ -3,13 +3,20 @@ import girl1 from '../assets/girlnew1.jpg';
 import girl2 from '../assets/girlnew2.png';
 
 const Trends = () => {
-    const [newPoint, setNewPoint] = useState({
-        x1: 150, y1: 560, x2: 250, y2: 500,
-        x3: null, y3: null, x4: null, y4: null, 
-        x5: null, y5: null, x6: null, y6: null, 
-        x7: null, y7: null, x8: null, y8: null, 
-        x9: null, y9: null, x10: null, y10: null
-    });
+    const [newPoint, setNewPoint] = useState([
+        { x: 0, y: 560 },
+        { x: 50, y: 500 },
+        { x: 230, y: 440 },
+        { x: 210, y: 390 },
+        { x: 290, y: 320 },
+        { x: 370, y: 280 },
+        { x: 350, y: 230 },
+        { x: 430, y: 190 },
+        { x: 410, y: 140 },
+        { x: 570, y: 40 }
+    ]);
+
+    const [visiblePoints, setVisiblePoints] = useState([]);
     
     const [heightClass, setHeightClass] = useState({
         h1:"h-1",
@@ -19,23 +26,18 @@ const Trends = () => {
         h5:"h-1"
     });
 
-    useEffect(()=>{
-    let increment=0
-    const timer = setInterval(()=>{
-            if(increment >= 0 ) setNewPoint((prev) => ({...prev,x1:150,y1:560,x2:250,y2:500,}))        
-            if (increment >=1 ) setNewPoint((prev) => ({ ...prev, x3: 230, y3: 440 }));                   
-            if (increment >= 2) setNewPoint((prev) => ({ ...prev, x4: 210, y4: 390 }));   
-            if (increment >= 3) setNewPoint((prev) => ({ ...prev, x5: 290, y5: 320 }));
-            if (increment >= 4) setNewPoint((prev) => ({ ...prev, x6: 370, y6: 280 }));
-            if (increment >= 5) setNewPoint((prev) => ({ ...prev, x7: 350, y7: 230 }));
-            if (increment >= 6) setNewPoint((prev) => ({ ...prev, x8: 430, y8: 190 }));
-            if (increment >= 7) setNewPoint((prev) => ({ ...prev, x9: 410, y9: 140 }));
-            if (increment >= 8) setNewPoint((prev) => ({ ...prev, x10: 570, y10: 40 }));     
-        increment++       
-
-    },150)
-           return ()=>clearInterval(timer)
-    },[])
+    useEffect(() => {
+        let increment = 0;
+        const timer = setInterval(() => {
+            if (increment < newPoint.length) {
+                setVisiblePoints((prev) => [...prev, newPoint[increment]]);
+                increment++;
+            } else {
+                clearInterval(timer);
+            }
+        }, 150);
+        return () => clearInterval(timer);
+    }, []);
 
 
     useEffect(() => {
@@ -81,17 +83,20 @@ const Trends = () => {
 
         <div className='absolute left-44 top-0  w-32 h-32 flex justify-center items-center'>
 
-            <svg viewBox="0 0 800 600" className="w-96 h-full">
-                
-                    <polyline
-                    points={`${newPoint.x1},${newPoint.y1} ${newPoint.x2},${newPoint.y2}  ${newPoint.x3},${newPoint.y3}   ${newPoint.x4},${newPoint.y4} ${newPoint.x5},${newPoint.y5} ${newPoint.x6},${newPoint.y6} ${newPoint.x7},${newPoint.y7} ${newPoint.x8},${newPoint.y8} ${newPoint.x9},${newPoint.y9} ${newPoint.x10},${newPoint.y10}`}
-                    fill="none" 
-                    stroke="green"
-                    strokeWidth="12"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-                </svg> 
+        <svg viewBox="0 0 800 600" className="w-96 h-full">
+  <polyline
+    points={visiblePoints
+      .filter(point => point && typeof point.x === "number" && typeof point.y === "number") // ✅ Filter out bad data
+      .map(({ x, y }) => `${x},${y}`)
+      .join(" ")}
+    fill="none"
+    stroke="green"
+    strokeWidth="12"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>
+
  
         </div>
 
