@@ -24,13 +24,13 @@ const block = <BsStars size={12} color='white'/>
 
 const Selector = () => {
 const [selectIcon, setSelectIcon] = useState({
-  icon1:"bg-stone-800",
+  icon1:"bg-red-500",
   icon2:"bg-stone-800",
   icon3:"bg-stone-800",
   icon4:"bg-stone-800",
   icon5:"bg-stone-800",
   icon6:"bg-stone-800",
-  text1:"text-stone-500",
+  text1:"text-white",
   text2:"text-stone-500",
   text3:"text-stone-500",
   text4:"text-stone-500",
