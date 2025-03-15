@@ -31,12 +31,15 @@ const Mainbadge = () => {
 
     
   return (
-    <div className='border border-stone-700 rounded-lg w-2/6 h-80 bg-stone-900 flex flex-row'>
+    <div className='border border-stone-700 rounded-lg lg:w-[30rem] md:w-[30rem] sm:w-[30rem] w-[30rem]  h-80 bg-stone-900 flex flex-row'>
         <div className='w-48 h-full bg-stone-950 border-r border-stone-700 rounded-l-lg flex justify-center'>
             <Selector/> 
         </div>
         <div className='w-full flex justify-center item-center mt-4'>
-              {badgeArray[badgeSelect.stage]}
+           
+                {badgeArray[badgeSelect.stage]}      
+           
+
         </div>
     </div>
   )

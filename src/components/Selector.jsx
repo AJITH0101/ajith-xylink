@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ButtonSelect from './ButtonSelect';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -43,6 +43,15 @@ const dispatch = useDispatch()
 
 
 const iconSelect = useSelector((state)=>state.stage)
+
+useEffect(()=>{
+
+const switchInterval = setInterval(()=>{
+  
+
+},1000)
+
+},[])
 
   const clickedOption=(selectColor,shiftValue)=>{
 
