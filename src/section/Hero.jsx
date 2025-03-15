@@ -4,8 +4,8 @@ import Typewriter from "typewriter-effect";
 const Hero = () => {
   return (
    <>
-   <div className="flex h-screen text-white font-semibold">
-      <div className="typewriter-container text-[4rem] leading-tight">
+   <div className="flex h-screen text-white ml-4 ">
+      <div className="typewriter-container text-[3.5rem] leading-tight">
         <Typewriter
           onInit={(typewriter) => {
             typewriter
@@ -14,7 +14,7 @@ const Hero = () => {
           }}
           options={{
             loop: false,
-            delay: 75, // Typing speed
+            delay: 40, // Typing speed
             cursor: '', // Hide cursor
           }}
         />
