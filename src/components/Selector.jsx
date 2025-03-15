@@ -43,17 +43,32 @@ const dispatch = useDispatch()
 
 
 const iconSelect = useSelector((state)=>state.stage)
+const [shiftLogic,setShiftLogic] = useState(false)
+const [switchLogic, setSwitchLogic] = useState(true)
+let counter = 0;
+
+// const [counter, setCounter] = useState(0)
+const colorArray = ["bg-red-500","bg-green-500","bg-blue-500","bg-yellow-600","bg-pink-600","bg-orange-600"]
 
 useEffect(()=>{
+ if(!shiftLogic)
+ {
+ 
+  const myInterval = setInterval(()=>{
+    clickedOption(colorArray[counter],counter)
+    counter++
+    if(counter>5)
+      counter=0   
+   
+  },1500)
 
-const switchInterval = setInterval(()=>{
-  
-
-},1000)
-
-},[])
+  return() => clearInterval(myInterval)
+}
+},[shiftLogic])
 
   const clickedOption=(selectColor,shiftValue)=>{
+
+ 
 
     dispatch(autoShift(shiftValue))
 
@@ -145,12 +160,12 @@ const switchInterval = setInterval(()=>{
          <label className='text-white text-sm ml-1'>Blocks</label>   
         </div>
         
-    <ButtonSelect color={selectIcon.icon1} text={selectIcon.text1} icon={cardIcon} arrow={rightArrow}  onClick={() => clickedOption("bg-red-500",0)}>Cards</ButtonSelect>
-    <ButtonSelect color={selectIcon.icon2} text={selectIcon.text2} icon={trends} arrow={rightArrow}   onClick={() => clickedOption("bg-green-500",1)}>Trends</ButtonSelect>   
-    <ButtonSelect color={selectIcon.icon3} text={selectIcon.text3} icon={num} arrow={rightArrow}  onClick={() => clickedOption("bg-blue-500",2)}>Numbers</ButtonSelect>   
-    <ButtonSelect color={selectIcon.icon4} text={selectIcon.text4} icon={people} arrow={rightArrow}  onClick={() => clickedOption("bg-yellow-600",3)}>People</ButtonSelect>
-    <ButtonSelect color={selectIcon.icon5} text={selectIcon.text5} icon={embed} arrow={rightArrow}  onClick={() => clickedOption("bg-pink-600",4)}>Embeds</ButtonSelect>   
-    <ButtonSelect color={selectIcon.icon6} text={selectIcon.text6} icon={timeline} arrow={rightArrow}  onClick={() => clickedOption("bg-orange-600",5)}>Timeline</ButtonSelect>  
+    <ButtonSelect color={selectIcon.icon1} text={selectIcon.text1} icon={cardIcon} arrow={rightArrow}  onClick={() => clickedOption("bg-red-500",0,setShiftLogic(true))}>Cards</ButtonSelect>
+    <ButtonSelect color={selectIcon.icon2} text={selectIcon.text2} icon={trends} arrow={rightArrow}   onClick={() => clickedOption("bg-green-500",1,setShiftLogic(true))}>Trends</ButtonSelect>   
+    <ButtonSelect color={selectIcon.icon3} text={selectIcon.text3} icon={num} arrow={rightArrow}  onClick={() => clickedOption("bg-blue-500",2,setShiftLogic(true))}>Numbers</ButtonSelect>   
+    <ButtonSelect color={selectIcon.icon4} text={selectIcon.text4} icon={people} arrow={rightArrow}  onClick={() => clickedOption("bg-yellow-600",3,setShiftLogic(true))}>People</ButtonSelect>
+    <ButtonSelect color={selectIcon.icon5} text={selectIcon.text5} icon={embed} arrow={rightArrow}  onClick={() => clickedOption("bg-pink-600",4,setShiftLogic(true))}>Embeds</ButtonSelect>   
+    <ButtonSelect color={selectIcon.icon6} text={selectIcon.text6} icon={timeline} arrow={rightArrow}  onClick={() => clickedOption("bg-orange-600",5,setShiftLogic(true))}>Timeline</ButtonSelect>  
     <ButtonSelect text={selectIcon.text7} icon={more} arrow={rightArrow}>More</ButtonSelect>  
     </div>
   )

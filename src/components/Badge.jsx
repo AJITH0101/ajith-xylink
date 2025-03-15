@@ -6,8 +6,16 @@ const Badge = ({image, details}) => {
   const [effect,setEffect] = useState(false)
   
      useEffect(()=>{
-      setEffect(true)
-     })
+        const timeout = setTimeout(() => {
+            setEffect(true);
+          }, 50); // Small delay to trigger transition effect
+      
+
+      return () => {
+        clearTimeout(timeout);
+        setEffect(false); // Set effect to false when component unmounts
+      };
+     },[])
     
   return (
     <div>

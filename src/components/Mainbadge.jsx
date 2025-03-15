@@ -26,7 +26,7 @@ const Mainbadge = () => {
   const badgeSelect = useSelector((state)=>state.select)
   const badgeArray = [<Badge image={desert} details={marketing}/> ,<Badge image={girl} details={embeds}/> ,<Numbers/>,<Trends/>,<People/>,<Timeline/> ]
 
-  console.log(badgeSelect.stage);
+
   
 
     

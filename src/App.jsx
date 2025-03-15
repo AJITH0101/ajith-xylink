@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import Mainbadge from './components/Mainbadge'
 import Hero from './section/Hero'
+import Uplift from './section/Uplift'
 
 
 
@@ -11,9 +12,11 @@ const App = () => {
 
   
   return (
-      <>       
+      <>  
 
-   <div style={{ fontFamily: "Poppins, sans-serif" }} className='w-full flex mt-10 justify-center'>
+<Uplift/>
+
+   {/* <div style={{ fontFamily: "Poppins, sans-serif" }} className='w-full flex mt-10 justify-center'>
       <div className='lg:w-[70rem] h-[35rem] border border-stone-800 rounded-lg flex justify-center items-center'>
 
             <div className='lg:w-[65rem] h-[30rem] border border-stone-800 rounded-lg flex justify-end bg-stone-950 '
@@ -34,7 +37,7 @@ const App = () => {
         
       </div>
       
-    </div> 
+    </div>  */}
 
 
     </>
