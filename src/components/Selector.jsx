@@ -60,7 +60,7 @@ useEffect(()=>{
     if(counter>5)
       counter=0   
    
-  },1500)
+  },2000)
 
   return() => clearInterval(myInterval)
 }

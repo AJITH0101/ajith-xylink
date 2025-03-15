@@ -21,7 +21,7 @@ const Uplift = () => {
 
         const timerBadge= setTimeout(()=>{
             setStartBadge(true)
-        },2000);
+        },3000);
   
       return () => {
         clearTimeout(timeout,timerWrite,timerBadge);
@@ -53,10 +53,17 @@ const Uplift = () => {
           <div className='w-[23.5rem] h-56 mt-28 ml-4 mr-14 border border-stone-900'>
             {startWrite && <Hero/>}
           </div>
+
+            <div className='w-1/2 '>
       
-          <div className='mt-20 mr-12 w-1/2'>
-          {startBadge && <Mainbadge/> }
-          </div>
+                <div className='mt-20 mr-12 transition-transform duration-1000'style={{
+                transform: `perspective(600px) rotateX(${startBadge ? "0deg" : "-90deg"})`,
+                transformOrigin: "top",
+                    }}>
+                <Mainbadge/>                
+                </div>
+            </div>
+
         </div>
 
        
