@@ -29,17 +29,13 @@ const Uplift = () => {
       }
     }, []);
 
-    useEffect(()=>{
-        
-       
-
-    },[])
+   
 
   return (
   
 
-
-<div style={{ fontFamily: "Poppins, sans-serif" }} className='w-full flex mt-10 justify-center'>
+<div>
+<div style={{ fontFamily: "Poppins, sans-serif" }} className='w-full mt-10 flex justify-center'>
       <div className='lg:w-[70rem] h-[35rem] border border-stone-800 rounded-lg flex justify-center items-center  transition-transform duration-1000' style={{
         transform: `perspective(600px) rotateX(${lift ? "0deg" : "90deg"})`,
         transformOrigin: "bottom",
@@ -71,6 +67,7 @@ const Uplift = () => {
       </div>
       
     </div> 
+    </div>
 
 
  
