@@ -8,18 +8,13 @@ const Trialpage = () => {
         useEffect(()=>{
 
             const handleScroll = ()=>{
-              const scrollY = window.scrollY;  
-              const scale = scrollY <= 500 
-              ? 100 
-              : Math.max(30, Math.floor(100 - (((scrollY - 500) / 360) * (100 - 30))));
-
-              const degree = scrollY <= 500
-              ? 0 
-              : Math.max(-45, Math.floor(0 - (((scrollY - 500) / 360) * 45)));
-            
-              console.log("degree value",degree);
-              setScrollValue(scale);
-              setDegreeValue(degree)
+                const scrollY = window.scrollY;
+                const scale = Math.max(30, Math.floor(100 - ((scrollY / 360) * (100 - 30))));
+        
+                const degree = Math.max(-45, Math.floor(0 - ((scrollY / 360) * 45)));
+                //console.log("scroll y position", scrollY);
+                setScrollValue(scale);
+                setDegreeValue(degree)
               
             }
             window.addEventListener("scroll", handleScroll);
@@ -32,14 +27,22 @@ const Trialpage = () => {
 
         
   return (
-    <div className='w-full'>
-    <div className='lg:w-[70rem] h-[35rem] rounded-lg border border-stone-600'
+    <div className='w-full h-auto'>
+    <div
      style={{
         transform: `scale(${scrollValue / 100}) perspective(1000px) rotateY(${degreeValue}deg)`,
         transition: "transform 0.5s ease-out",
       }}
     
     >
+
+<div className='absolute w-full flex justify-center '>
+
+    <div className='lg:w-[70rem] h-[35rem] rounded-lg border border-stone-600'></div>
+              
+            </div>
+
+
 
     </div>
     </div>
