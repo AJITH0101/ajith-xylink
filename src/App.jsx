@@ -15,10 +15,10 @@ const App = () => {
   return (
         <div className='relative w-full h-auto'>  
         <Navbar/>     
-        <div className='absolute fixed top-0 w-full'>
+        <div className='absolute fixed top-10 w-full'>
          <Firstpage />        
        </div>
-       <div className='absolute top-[50rem] w-full'> 
+       <div className='absolute w-full top-[53rem] h-[45rem] flex justify-center'> 
         <Trialpage/>
        </div>
        {/* <div className='absolute top-0 justify-center flex w-full min-h-[150vh]'>
