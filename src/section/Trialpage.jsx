@@ -9,9 +9,18 @@ const Trialpage = () => {
 
             const handleScroll = ()=>{
                 const scrollY = window.scrollY;
-                const scale = Math.max(30, Math.floor(100 - ((scrollY / 360) * (100 - 30))));
+                //const scale = Math.max(30, Math.floor(100 - ((scrollY / 360) * (100 - 30))));
         
-                const degree = Math.max(-45, Math.floor(0 - ((scrollY / 360) * 45)));
+                //const degree = Math.max(-45, Math.floor(0 - ((scrollY / 360) * 45)));
+                const scale = scrollY <= 500
+        ? 100
+        : Math.max(30, Math.floor(100 - (((scrollY - 500) / 360) * (100 - 30))));
+
+      const degree = scrollY <= 500
+        ? 0
+        : Math.max(-45, Math.floor(0 - (((scrollY - 500) / 360) * 45)));
+
+                
                 //console.log("scroll y position", scrollY);
                 setScrollValue(scale);
                 setDegreeValue(degree)

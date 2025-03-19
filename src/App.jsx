@@ -13,12 +13,12 @@ const App = () => {
   
 
   return (
-        <div className='relative w-full h-[70rem]' >  
+        <div className='relative w-full h-[100rem]' >  
         <Navbar/>     
         <div className='absolute fixed top-10 w-full'>
          <Firstpage />        
        </div>
-       <div className='absolute fixed  w-full top-10 '> 
+       <div className='absolute fixed  w-full top-10 z-10'> 
         
        <Trialpage/>
         
