@@ -13,13 +13,15 @@ const App = () => {
   
 
   return (
-        <div className='relative w-full h-auto'>  
+        <div className='relative w-full h-auto' >  
         <Navbar/>     
         <div className='absolute fixed top-10 w-full'>
          <Firstpage />        
        </div>
-       <div className='absolute w-full top-[53rem] h-[45rem] flex justify-center'> 
-        <Trialpage/>
+       <div className='absolute  w-full top-[45rem] h-[44rem] flex justify-center'> 
+        
+        <div><Trialpage/></div>
+        
        </div>
        {/* <div className='absolute top-0 justify-center flex w-full min-h-[150vh]'>
         <Secondpage/> 
