@@ -4,6 +4,7 @@ import './App.css'
 import Firstpage from './section/Firstpage'
 import Navbar from './section/Navbar'
 import Secondpage from './section/Secondpage'
+import Trialpage from './section/Trialpage';
 
 
 const App = () => {  
@@ -12,10 +13,13 @@ const App = () => {
   
 
   return (
-        <div className='relative w-full'>  
+        <div className='relative w-full h-auto'>  
         <Navbar/>     
-        <div>
+        <div className='absolute fixed top-0 w-full'>
          <Firstpage />        
+       </div>
+       <div className='absolute top-[50rem] w-full'> 
+        <Trialpage/>
        </div>
        {/* <div className='absolute top-0 justify-center flex w-full min-h-[150vh]'>
         <Secondpage/> 

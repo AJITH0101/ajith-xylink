@@ -25,9 +25,9 @@ const Firstpage = () => {
     },[])
     
   return (
-    <div className='w-full relative'>  
+    <div className='w-full relative h-auto'>  
           <div
-            className="min-h-[150vh]"
+            
             style={{
               transform: `scale(${scrollValue / 100}) perspective(1000px) rotateY(${degreeValue}deg)`,
               transition: "transform 0.5s ease-out",
