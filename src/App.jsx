@@ -18,7 +18,7 @@ const App = () => {
         <div className='absolute fixed top-10 w-full'>
          <Firstpage />        
        </div>
-       <div className='absolute fixed  w-full top-10 z-10'> 
+       <div className='absolute fixed  w-full top-10'> 
         
        <Trialpage/>
         
