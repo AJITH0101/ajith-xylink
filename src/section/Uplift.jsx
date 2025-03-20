@@ -41,7 +41,7 @@ const Uplift = () => {
         transformOrigin: "bottom",
       }}>
 
-            <div className='lg:w-[65rem] h-[30rem] border border-stone-800 rounded-lg flex justify-end bg-stone-950 '
+            <div className='lg:w-[65rem] h-[30rem] border border-stone-800 bg-black rounded-lg flex justify-end bg-stone-950 '
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Ccircle cx='2' cy='2' r='1.2' fill='%23111111'/%3E%3C/svg%3E")`,
             backgroundSize: "10px 10px"

@@ -50,7 +50,7 @@ const Trialpage = () => {
 
 <div className='absolute w-full flex justify-center '>
 
-    <div className={`lg:w-[70rem] h-[35rem] mr-38 mt-10 absolute  rounded-lg border border-stone-600  transition-[top] duration-800 ease-in-out`}
+    <div className={`lg:w-[70rem] h-[35rem]  absolute  rounded-lg border border-stone-600  transition-[top] duration-800 ease-in-out`}
        style={{ top: `${topValue * 4}px` }} 
     ></div>
               
