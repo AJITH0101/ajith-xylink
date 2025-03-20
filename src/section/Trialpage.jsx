@@ -6,6 +6,12 @@ const Trialpage = () => {
         const [degreeValue, setDegreeValue] = useState(0)
         const[topValue, setTopValue] = useState(140)
 
+        const[shiftPage, setShiftPage] = useState({
+          topSpace:0,
+          leftSpace:null
+        })
+       
+
         useEffect(()=>{
 
             const handleScroll = ()=>{
@@ -14,6 +20,25 @@ const Trialpage = () => {
             const degree = scrollY <= 500 ? 0: Math.max(-45, Math.floor(0 - (((scrollY - 500) / 360) * 45)));
             const changeTop = scrollY > 360 ? Math.max(0, 140 - ((scrollY - 360) * (140 / 140))) : 140;
 
+           if(scrollY > 500){
+  setShiftPage((prev)=>{
+    return{
+      ...prev,
+      topSpace:50,
+      leftSpace:10
+    }
+  })
+}
+else{
+  setShiftPage((prev)=>{
+    return{
+      ...prev,
+      topSpace:0,
+      leftSpace:null
+    }
+  })
+
+}
                 console.log("check axis", scrollY);
                 setScrollValue(scale);
                 setDegreeValue(degree)
@@ -35,6 +60,7 @@ const Trialpage = () => {
           setTimeout(() => {
             setScrollValue(100);
             setDegreeValue(0);
+          
           }, 500); // Adjust delay based on scroll speed
         
 
@@ -56,9 +82,16 @@ const Trialpage = () => {
 
 <div className='absolute w-full flex justify-center '>
 
-    <div className={`lg:w-[75rem] h-[35rem]  absolute  rounded-lg border border-stone-600  transition-[top] duration-800 ease-in-out`}
-       style={{ top: `${topValue * 4}px` }} onClick={selectPage}
-    ></div>
+    <div className={`lg:w-[75rem] h-[35rem]  absolute  rounded-lg border border-stone-600  transition-[top] duration-800 ease-in-out flex justify-center items-center`}
+       style={{ top: `${topValue * 4 + shiftPage.topSpace}px`, left:shiftPage.leftSpace}} onClick={selectPage}
+    >
+<div className='lg:w-[70rem] h-[30rem] border border-stone-800 bg-stone-950 rounded-lg '>
+
+     </div>
+
+    </div>
+
+     
               
             </div>
 
