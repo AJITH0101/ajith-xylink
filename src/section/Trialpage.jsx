@@ -10,20 +10,11 @@ const Trialpage = () => {
 
             const handleScroll = ()=>{
             const scrollY = window.scrollY;
-            //const scale = Math.max(30, Math.floor(100 - ((scrollY / 360) * (100 - 30))));
-        
-            //const degree = Math.max(-45, Math.floor(0 - ((scrollY / 360) * 45)));
             const scale = scrollY <= 500 ? 100: Math.max(30, Math.floor(100 - (((scrollY - 500) / 360) * (100 - 30))));
-        
-        
+            const degree = scrollY <= 500 ? 0: Math.max(-45, Math.floor(0 - (((scrollY - 500) / 360) * 45)));
+            const changeTop = scrollY > 360 ? Math.max(0, 140 - ((scrollY - 360) * (140 / 140))) : 140;
 
-          const degree = scrollY <= 500 ? 0: Math.max(-45, Math.floor(0 - (((scrollY - 500) / 360) * 45)));
- 
-          const changeTop = scrollY > 360 ? Math.max(0, 140 - ((scrollY - 360) * (140 / 140))) : 140;
-
-
-  
-                console.log("top set", changeTop);
+                console.log("check axis", scrollY);
                 setScrollValue(scale);
                 setDegreeValue(degree)
                 setTopValue(changeTop)
@@ -31,27 +22,42 @@ const Trialpage = () => {
             }
             window.addEventListener("scroll", handleScroll);
             return () => window.removeEventListener("scroll", handleScroll);
-            
-
+ 
         },[])
 
-
-
+        const selectPage = ()=>{
+          window.scrollTo({
+            top: 500, // Adjusted value
+            behavior: "smooth",
+          });
         
+          // Delay state reset to prevent jerking
+          setTimeout(() => {
+            setScrollValue(100);
+            setDegreeValue(0);
+          }, 500); // Adjust delay based on scroll speed
+        
+
+          console.log("page selected");
+          
+
+        }
+
+
+   
   return (
     <div className='relative w-full h-auto'>
     <div
      style={{
         transform: `scale(${scrollValue / 100}) perspective(1000px) rotateY(${degreeValue}deg)`,
         transition: "transform 0.5s ease-out",
-      }}
-    
+      }}    
     >
 
 <div className='absolute w-full flex justify-center '>
 
-    <div className={`lg:w-[70rem] h-[35rem]  absolute  rounded-lg border border-stone-600  transition-[top] duration-800 ease-in-out`}
-       style={{ top: `${topValue * 4}px` }} 
+    <div className={`lg:w-[75rem] h-[35rem]  absolute  rounded-lg border border-stone-600  transition-[top] duration-800 ease-in-out`}
+       style={{ top: `${topValue * 4}px` }} onClick={selectPage}
     ></div>
               
             </div>
