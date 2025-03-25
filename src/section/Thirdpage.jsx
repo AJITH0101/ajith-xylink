@@ -1,10 +1,10 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 
-const Secondpage  = () => {
+const Thirdpage  = () => {
      const [scrollValue, setScrollValue] = useState(100)
         const [degreeValue, setDegreeValue] = useState(0)
-        const[topValue, setTopValue] = useState(140)
+        const[topValue, setTopValue] = useState(280)
 
         const[shiftPage, setShiftPage] = useState({
           topSpace:0,
@@ -16,11 +16,11 @@ const Secondpage  = () => {
 
             const handleScroll = ()=>{
             const scrollY = window.scrollY;
-            const scale = scrollY <= 500 ? 100: Math.max(30, Math.floor(100 - (((scrollY - 500) / 360) * (100 - 30))));
-            const degree = scrollY <= 500 ? 0: Math.max(-45, Math.floor(0 - (((scrollY - 500) / 360) * 45)));
-            const changeTop = scrollY > 360 ? Math.max(0, 140 - ((scrollY - 360) * (140 / 140))) : 140;
+            const scale = scrollY <= 840 ? 100: Math.max(30, Math.floor(100 - (((scrollY - 840) / 360) * (100 - 30))));
+            const degree = scrollY <= 840 ? 0: Math.max(-45, Math.floor(0 - (((scrollY - 840) / 360) * 45)));
+            const changeTop = scrollY > 840 ? Math.max(0, 280 - ((scrollY - 360) * (280 / 280))) : 280;
 
-           if(scrollY > 500){
+           if(scrollY > 840){
   setShiftPage((prev)=>{
     return{
       ...prev,
@@ -52,7 +52,7 @@ else{
 
         const selectPage = ()=>{
           window.scrollTo({
-            top: 500, // Adjusted value
+            top:840, // Adjusted value
             behavior: "smooth",
           });
         
@@ -102,4 +102,5 @@ else{
   )
 }
 
-export default Secondpage
+
+export default Thirdpage
