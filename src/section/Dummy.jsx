@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import Uplift from './Uplift'
 
-const Dummy= () => {
+const Dummy= ({getValue}) => {
     const [scrollValue, setScrollValue] = useState(100)
     const [degreeValue, setDegreeValue] = useState(0)
     const [bounce,setBounce] = useState({
@@ -15,7 +15,7 @@ const Dummy= () => {
     
         const handleScroll = () => {
           const scrollY = window.scrollY;
-          if(scrollY>560){
+          if(scrollY>getValue){
           const scale = Math.max(30, Math.floor(100 - ((scrollY / 360) * (100 - 30))));
           const degree = Math.max(-45, Math.floor(0 - ((scrollY / 360) * 45)));
           //console.log("scroll y position", scrollY);
@@ -38,7 +38,7 @@ const Dummy= () => {
   
       const selectPage = ()=>{
         window.scrollTo({
-          top: 560, // Adjusted value
+          top: getValue, // Adjusted value
           behavior: "smooth",
         });
         console.log("Second page");

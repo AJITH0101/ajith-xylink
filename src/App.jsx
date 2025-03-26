@@ -18,7 +18,7 @@ const App = () => {
       const scrollY = window.scrollY;
       const changeTop = Math.max(560 - Math.floor(scrollY), 0);
       const changeTop1 = Math.max(1120 - Math.floor(scrollY), 0);
-     // console.log("new change top",changeTop, "scrollY:",scrollY);
+    console.log("change to 1",changeTop, "change top 2",changeTop1);
 
       //setTimeout(()=>{
  setTopPixel(changeTop)
@@ -42,12 +42,12 @@ const App = () => {
         <div className='absolute fixed  w-full'>
           <Firstpage />        
        </div>
-    <div className='absolute   w-full fixed  transition-all duration-800 ' style={{ transform: `translateY(${topPixel}px)` }}>         
-          <Dummy />        
+    <div className={`absolute   w-full fixed  transition-all duration-800 ${topPixel === 0 ? "right-4 top-1":""}`} style={{ transform: `translateY(${topPixel}px)` }}>         
+          <Dummy getValue={560}/>        
        </div>
-       {/* <div className='absolute   w-full fixed  transition-all duration-800 ' style={{ transform: `translateY(${topPixelOne}px)` }}>         
-          <Dummy />        
-       </div> */}
+        <div className={`absolute   w-full fixed  transition-all duration-800 ${topPixelOne === 0 ? "right-8 top-2":""}`} style={{ transform: `translateY(${topPixelOne}px)` }}>         
+          <Dummy getValue={1120}/>        
+       </div>
        
 
       
