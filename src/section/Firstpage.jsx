@@ -33,6 +33,8 @@ const Firstpage = () => {
         top: 0, // Adjusted value
         behavior: "smooth",
       });
+      console.log("first page");
+      
     }
     
   return (

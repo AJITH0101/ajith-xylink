@@ -15,11 +15,19 @@ const Dummy= () => {
     
         const handleScroll = () => {
           const scrollY = window.scrollY;
+          if(scrollY>560){
           const scale = Math.max(30, Math.floor(100 - ((scrollY / 360) * (100 - 30))));
           const degree = Math.max(-45, Math.floor(0 - ((scrollY / 360) * 45)));
           //console.log("scroll y position", scrollY);
           setScrollValue(scale);
-          setDegreeValue(degree)
+          setDegreeValue(degree) 
+          }
+          else{
+            setScrollValue(100);
+            setDegreeValue(0) 
+           
+          }
+         
           
         }
         window.addEventListener("scroll", handleScroll);
@@ -30,10 +38,13 @@ const Dummy= () => {
   
       const selectPage = ()=>{
         window.scrollTo({
-          top: 0, // Adjusted value
+          top: 560, // Adjusted value
           behavior: "smooth",
         });
+        console.log("Second page");
       }
+
+     
       
     return (
       <div className='w-full relative h-auto transition-transform duration-500 ease-out'>  
@@ -43,6 +54,7 @@ const Dummy= () => {
                 transform: `scale(${scrollValue / 100}) perspective(1000px) rotateY(${degreeValue}deg)
                 translateX(${bounce.bounceX}px) translateY(${bounce.bounceY}px)`,
                 transition: "transform 0.5s ease-out",
+               
               }}
   
   
@@ -60,7 +72,7 @@ const Dummy= () => {
               }
               
             >
-              <div className='absolute w-full flex justify-center '>
+              <div className='absolute w-full flex justify-center ' onClick={selectPage}>
                  <div className='lg:w-[75rem] h-[35rem] border border-stone-800 rounded-lg flex justify-center items-center  transition-transform duration-1000'>
 
                     <div className='lg:w-[70rem] h-[30rem] border border-stone-800 bg-stone-950 rounded-lg '>
