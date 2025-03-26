@@ -36,7 +36,7 @@ const Uplift = () => {
 
 <div>
 <div style={{ fontFamily: "Poppins, sans-serif" }} className='w-full'>
-      <div className='lg:w-[75rem] h-[35rem] border border-stone-800 rounded-lg flex justify-center items-center  transition-transform duration-1000' style={{
+      <div className='lg:w-[75rem] h-[35rem] border border-stone-800 rounded-lg flex justify-center items-center  transition-transform duration-1000 mt-12' style={{
         transform: `perspective(600px) rotateX(${lift ? "0deg" : "90deg"})`,
         transformOrigin: "bottom",
       }}>

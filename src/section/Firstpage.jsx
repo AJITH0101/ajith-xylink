@@ -50,7 +50,7 @@ const Firstpage = () => {
 
             onClick={selectPage} onMouseEnter={() => {
               if (scrollValue < 50) {
-                setBounce((prev) => ({ ...prev, bounceX: 50, bounceY: 50 }));
+                setBounce((prev) => ({ ...prev, bounceX: 20, bounceY: 20 }));
               }
              
             }}
