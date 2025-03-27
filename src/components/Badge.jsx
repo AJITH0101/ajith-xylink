@@ -29,9 +29,9 @@ const Badge = ({image, details}) => {
             </div> 
         </div>
 
-        <div className={`flex flex-row items-center lg:w-[80%] lg:h-[20%] md:w-[80%] md:w-[20%] w-[100%] h-[20%] bg-stone-800 rounded-md shadow-lg shadow-black mt-3 transition-transform duration-800  ${effect ? "scale-100" : "scale-90"}`}>
-            <div className='lg:w-[25%] md:w-[25%] w-[100%] h-auto ml-4'>
-                <img src={image} alt="Desert" className="object-cover rounded-lg" />
+        <div className={`flex flex-row items-center lg:w-[80%] lg:h-[20%]  md:w-[80%] w-[100%] h-[20%] bg-stone-800 rounded-md shadow-lg shadow-black mt-3 transition-transform duration-800  ${effect ? "scale-100" : "scale-90"}`}>
+            <div className='lg:w-[40%] md:w-[80%] w-[40%] h-auto ml-4'>
+                <img src={image} alt="Desert" className="lg:[w-100%] md:[w-100%] w-[70%] object-cover rounded-lg" />
             </div>
       
             <div className='flex flex-col w-[75%] h-auto'>
