@@ -1,83 +1,16 @@
 import React from 'react'
-import { useEffect, useState } from "react";
 import './App.css'
-import Firstpage from './section/Firstpage'
 import Navbar from './section/Navbar'
-import Secondpage from './section/Secondpage'
-import Trialpage from './section/Trialpage';
-import Thirdpage from './section/Thirdpage';
-import Dummy from './section/Dummy';
-const scrollData1 = 560
-const scrollData2 = 1120
-const scrollData3 = 1680
-
-const App = () => {  
-  const[topControl, setTopControl]= useState({
-    top1:scrollData1,
-    top2:scrollData2,
-    top3:scrollData3
-  })
+import Pagescroll from './section/Pagescroll'
 
 
-  const[scrollValue, setScrollValue] = useState(0)
-
-  useEffect(()=>{
-   
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const changeTop = Math.max(560 - Math.floor(scrollY), 0);
-      const changeTop1 = Math.max(1120 - Math.floor(scrollY), 0);
-      const changeTop2 = Math.max(1680 - Math.floor(scrollY), 0);
-   // console.log("change to 1",changeTop, "change top 2",changeTop1);
-
-    setTopControl((prev)=>{
-      
+const App = () => { 
   
-      return{
-        ...prev,
-        top1:changeTop,
-        top2:changeTop1,
-        top3:changeTop2,
-      }
-    })
-
-    }
-
-      
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-
-  },[])
-
-
-
-  const handleChildData = (val) => {
-   setScrollValue(val)
-  };
 
   return (
         <div className='relative w-full h-[200rem] flex justify-center' >  
-        <Navbar/>     
-        <div className='absolute fixed  w-full'>
-          <Firstpage />        
-       </div>
-        <div className={`absolute   w-full fixed  transition-all duration-800 ${scrollValue <= scrollData1 ? "right-0 top-0" : "right-4 top-1"} `} style={{ transform: `translateY(${topControl.top1}px)` }}>         
-          <Dummy getValue={scrollData1} sendDataToParent={handleChildData}/>        
-       </div>
-        <div className={`absolute   w-full fixed  transition-all duration-800 ${scrollValue <= scrollData2 ? "right-0 top-0" : "right-8 top-2"}`} style={{ transform: `translateY(${topControl.top2}px)` }}>         
-          <Dummy getValue={scrollData2} sendDataToParent={handleChildData}/>        
-       </div>
-
-       <div className={`absolute   w-full fixed  transition-all duration-800 ${scrollValue <= scrollData3 ? "right-0 top-0" : "right-12 top-3"}`} style={{ transform: `translateY(${topControl.top3}px)` }}>         
-          <Dummy getValue={scrollData3}  sendDataToParent={handleChildData}/>        
-       </div>
-       
-
-      
-       {/* <div className='absolute top-0 justify-center flex w-full min-h-[150vh]'>
-        <Secondpage/> 
-       </div> */}
-
+        <Navbar/>  
+        <Pagescroll/>   
       </div>
   )
 }

@@ -78,7 +78,7 @@ const Dummy= ({getValue,sendDataToParent}) => {
               
             >
               <div className='absolute w-full flex justify-center ' onClick={selectPage}>
-                 <div className='lg:w-[75rem] h-[35rem] border border-stone-800 rounded-lg flex justify-center items-center  transition-transform duration-1000  mt-12'>
+                 <div className='lg:w-[75rem] h-[35rem] border border-stone-800 rounded-lg flex justify-center items-center  transition-transform duration-1000  mt-13'>
 
                     <div className='lg:w-[70rem] h-[30rem] border border-stone-800 bg-stone-950 rounded-lg '>
 
