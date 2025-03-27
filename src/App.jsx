@@ -61,14 +61,14 @@ const App = () => {
         <div className='absolute fixed  w-full'>
           <Firstpage />        
        </div>
-        <div className={`absolute   w-full fixed  transition-all duration-800 ${scrollValue < scrollData1 ? "right-0 top-0" : "right-4 top-1"} `} style={{ transform: `translateY(${topControl.top1}px)` }}>         
+        <div className={`absolute   w-full fixed  transition-all duration-800 ${scrollValue <= scrollData1 ? "right-0 top-0" : "right-4 top-1"} `} style={{ transform: `translateY(${topControl.top1}px)` }}>         
           <Dummy getValue={scrollData1} sendDataToParent={handleChildData}/>        
        </div>
-        <div className={`absolute   w-full fixed  transition-all duration-800 ${scrollValue < scrollData2 ? "right-0 top-0" : "right-8 top-2"}`} style={{ transform: `translateY(${topControl.top2}px)` }}>         
+        <div className={`absolute   w-full fixed  transition-all duration-800 ${scrollValue <= scrollData2 ? "right-0 top-0" : "right-8 top-2"}`} style={{ transform: `translateY(${topControl.top2}px)` }}>         
           <Dummy getValue={scrollData2} sendDataToParent={handleChildData}/>        
        </div>
 
-       <div className={`absolute   w-full fixed  transition-all duration-800 ${scrollValue < scrollData3 ? "right-0 top-0" : "right-12 top-3"}`} style={{ transform: `translateY(${topControl.top3}px)` }}>         
+       <div className={`absolute   w-full fixed  transition-all duration-800 ${scrollValue <= scrollData3 ? "right-0 top-0" : "right-12 top-3"}`} style={{ transform: `translateY(${topControl.top3}px)` }}>         
           <Dummy getValue={scrollData3}  sendDataToParent={handleChildData}/>        
        </div>
        

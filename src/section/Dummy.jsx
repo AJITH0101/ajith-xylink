@@ -46,7 +46,7 @@ const Dummy= ({getValue,sendDataToParent}) => {
           behavior: "smooth",
         });
     
-    sendDataToParent(window.scrollY) 
+    sendDataToParent(getValue) 
     }
 
      
