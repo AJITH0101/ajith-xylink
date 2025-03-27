@@ -154,11 +154,13 @@ useEffect(()=>{
   }
   return (
     
-    <div>
-        <div className='flex flex-row mt-4'>
+    <div className='w-full h-full'>
+        <div className='flex flex-row mt-4 w-full'>
             <div className='ml-2 mb-4'>{block}</div>            
          <label className='text-white text-sm ml-1'>Blocks</label>   
         </div>
+
+        <div className='w-full'>
         
     <ButtonSelect color={selectIcon.icon1} text={selectIcon.text1} icon={cardIcon} arrow={rightArrow}  onClick={() => clickedOption("bg-red-500",0,setShiftLogic(true))}>Cards</ButtonSelect>
     <ButtonSelect color={selectIcon.icon2} text={selectIcon.text2} icon={trends} arrow={rightArrow}   onClick={() => clickedOption("bg-green-500",1,setShiftLogic(true))}>Trends</ButtonSelect>   
@@ -167,7 +169,8 @@ useEffect(()=>{
     <ButtonSelect color={selectIcon.icon5} text={selectIcon.text5} icon={embed} arrow={rightArrow}  onClick={() => clickedOption("bg-pink-600",4,setShiftLogic(true))}>Embeds</ButtonSelect>   
     <ButtonSelect color={selectIcon.icon6} text={selectIcon.text6} icon={timeline} arrow={rightArrow}  onClick={() => clickedOption("bg-orange-600",5,setShiftLogic(true))}>Timeline</ButtonSelect>  
     <ButtonSelect text={selectIcon.text7} icon={more} arrow={rightArrow}>More</ButtonSelect>  
-    </div>
+        </div>
+      </div>
   )
 }
 

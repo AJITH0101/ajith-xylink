@@ -18,9 +18,9 @@ const Badge = ({image, details}) => {
      },[])
     
   return (
-    <div>
-        <div className={`w-64 h-44 bg-stone-800 rounded-md shadow-lg shadow-black mt-1 flex justify-center  transition-transform duration-800  ${effect ? "scale-100" : "scale-90"}`}>
-            <div className='w-56 h-28 rounded-lg mt-4'>
+    <div className='w-[100%] h-full flex justify-center items-center flex-col'>
+        <div className={`lg:w-[80%] lg:h-[60%] md:w-[80%] md:[60%] w-[100%] h-[60%] bg-stone-800 rounded-md shadow-lg shadow-black mt-1 flex justify-center  transition-transform duration-800  ${effect ? "scale-100" : "scale-90"}`}>
+            <div className='w-[95%] h-[60%] rounded-lg mt-4'>
             <img src={image} alt="Desert" className="w-full h-full object-cover rounded-lg" />
             <div className='flex flex-col'>
             <label className='ml-1 text-white text-[10px] mt-2'>{details.head}</label>
@@ -29,12 +29,12 @@ const Badge = ({image, details}) => {
             </div> 
         </div>
 
-        <div className={`flex flex-row items-center w-64 h-20 bg-stone-800 rounded-md shadow-lg shadow-black mt-3 transition-transform duration-800  ${effect ? "scale-100" : "scale-90"}`}>
-            <div className='w-12 h-12 ml-4'>
-                <img src={image} alt="Desert" className="w-full h-full object-cover rounded-lg" />
+        <div className={`flex flex-row items-center lg:w-[80%] lg:h-[20%] md:w-[80%] md:w-[20%] w-[100%] h-[20%] bg-stone-800 rounded-md shadow-lg shadow-black mt-3 transition-transform duration-800  ${effect ? "scale-100" : "scale-90"}`}>
+            <div className='lg:w-[25%] md:w-[25%] w-[100%] h-auto ml-4'>
+                <img src={image} alt="Desert" className="object-cover rounded-lg" />
             </div>
       
-            <div className='flex flex-col'>
+            <div className='flex flex-col w-[75%] h-auto'>
                 <label className='ml-1 text-white text-[10px]'>{details.bottom}</label> 
                 <label className='ml-1 text-stone-500 text-[9px]'>{details.desc}</label>  
             </div>       

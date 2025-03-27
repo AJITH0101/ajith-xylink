@@ -3,9 +3,9 @@ import Typewriter from "typewriter-effect";
 
 const Hero = () => {
   return (
-   <>
-   <div className="flex h-screen text-white ml-4 ">
-      <div className="typewriter-container text-[3.5rem] leading-tight">
+
+   <div className="w-full flex h-screen text-white ml-4 text-center lg:text-left md:text-left">
+      <div className="typewriter-container lg:text-[3rem] md:text-[2rem] text-[2rem] leading-tight">
         <Typewriter
           onInit={(typewriter) => {
             typewriter
@@ -20,7 +20,7 @@ const Hero = () => {
         />
       </div>
     </div>
-   </>
+  
   )
 }
 
