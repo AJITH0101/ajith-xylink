@@ -60,10 +60,10 @@ const Trends = () => {
   return (
     <>
         <div className='w-[100%] h-full'>
-        <div className='relative border border-red-500 flex flex-col w-[95%] h-[40%] bg-stone-800 rounded-md shadow-lg shadow-black justify-center mt-2'>
-        <div className='absolute w-[100%] top-0 left-0 flex flex-row mt-3 justify-between'>
-        <label className='absolute w-[55%] top-0 left-0 text-stone-300 text-3xl'>37.65k</label>  
-        <div className='absolute top-0 left-30 w-[45%] h-full'>
+        <div className='relative  flex flex-col w-[95%] h-[40%] bg-stone-800 ml-1 rounded-md shadow-lg shadow-black justify-center mt-2'>
+                <div className='absolute w-[100%] top-0 left-0 flex flex-row mt-3 justify-between'>
+                <label className='absolute w-[55%] top-0 left-0 text-stone-300 text-3xl ml-2'>37.65k</label>  
+                <div className='absolute top-0 left-32 w-[45%] h-full'>
 
            
 
@@ -82,24 +82,7 @@ const Trends = () => {
 
 
 
-        <div className='absolute top-0 left-0 w-[100%] h-full flex justify-center items-center'>
-
-        <svg viewBox="0 0 800 600" className="w-96 h-full">
-  <polyline
-    points={visiblePoints
-      .filter(point => point && typeof point.x === "number" && typeof point.y === "number") // ✅ Filter out bad data
-      .map(({ x, y }) => `${x},${y}`)
-      .join(" ")}
-    fill="none"
-    stroke="green"
-    strokeWidth="12"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-</svg>
-
- 
-        </div>
+    
 
 
 
@@ -107,7 +90,28 @@ const Trends = () => {
 
         </div>
 
+        <div className='absolute top-2 left-22 w-[75%] h-full flex justify-center items-center'>
 
+            <svg viewBox="0 0 800 600" className="w-96 h-full">
+            <polyline
+            points={visiblePoints
+            .filter(point => point && typeof point.x === "number" && typeof point.y === "number") 
+            .map(({ x, y }) => `${x},${y}`)
+            .join(" ")}
+            fill="none"
+            stroke="green"
+            strokeWidth="12"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            />
+            </svg>
+
+
+        </div>
+
+
+ <label className='absolute text-stone-300 text-xs top-12 left-2'>JUNE 2024</label>  
+ <label className='absolute text-stone-500 text-[10px] top-17 left-2'>Marketing campaign<br/>effectiveness.</label>   
         </div>
         {/*
 
@@ -115,10 +119,10 @@ const Trends = () => {
         
 
         <div>
-         <label className='absolute text-stone-300 text-xs top-12 left-4'>JUNE 2024</label>   
+         
         </div>
         <div>
-         <label className='absolute text-stone-500 text-[10px] top-17 left-4'>Marketing campaign<br/>effectiveness.</label>   
+        
         </div> */}
         
        
@@ -127,33 +131,38 @@ const Trends = () => {
 
 
     
-        <div className='flex flex-row mt-2'>
-            <div className='relative flex flex-col w-32 h-28 bg-stone-800 rounded-md shadow-lg shadow-black justify-center mt-2'>
-                <div className='flex flex-row relative '>
+        <div className='w-[100%] h-[50%] flex flex-row mt-2 ml-1'>
+            <div className='relative flex flex-col w-[45%] h-auto bg-stone-800 rounded-md shadow-lg shadow-black justify-center mt-2'>
+                <div className=' flex flex-row w-[90%] h-auto justify-center'>
                     
-                        <div className="flex items-end h-10 ml-4 mt-2">
-                            <span className={`w-3 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h1}`} ><span className="absolute top-14 left-3 text-[9px] text-stone-500 inline-block rotate-270">2020</span></span>
+                        <div className="relative flex items-end h-10 ml-0 mt-2">
+                            <span className={`lg:w-3 md:w-2.5 w-2.5 ml-1 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h1}`} ></span>
+                            <span className="absolute top-12 left-0 text-[9px] text-stone-500 inline-block rotate-270">2020</span>
                         </div> 
                         
-                        <div className="flex items-end h-10 ml-2 mt-2">
-                            <span className={`w-3 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h2}`} ><span className="absolute top-14 left-8 text-[9px] text-stone-500 inline-block rotate-270">2021</span></span>
+                        <div className="relative flex items-end h-10 ml-2 mt-2">
+                            <span className={`lg:w-3 md:w-2.5 w-2.5 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h2}`} ></span>
+                            <span className="absolute top-12 left-0 text-[9px] text-stone-500 inline-block rotate-270">2021</span>
                         </div>   
                        
                
-                        <div className="flex items-end h-10 ml-2 mt-2">
-                            <span className={`w-3 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h3}`} ><span className="absolute top-14 left-13 text-[9px] text-stone-500 inline-block rotate-270">2022</span></span>
+                        <div className="relative flex items-end h-10 ml-2 mt-2">
+                            <span className={`lg:w-3 md:w-2.5 w-2.5 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h3}`} ></span>
+                            <span className="absolute top-12 left-0 text-[9px] text-stone-500 inline-block rotate-270">2022</span>
                         </div>  
-                        <div className="flex items-end h-10 ml-2 mt-2">
-                            <span className={`w-3 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h4}`} ><span className="absolute top-14 left-18 text-[9px] text-stone-500 inline-block rotate-270">2023</span></span>
+                        <div className="relative flex items-end h-10 ml-2 mt-2">
+                            <span className={`lg:w-3 md:w-2.5 w-2.5 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h4}`} ></span>
+                            <span className="absolute top-12 left-0 text-[9px] text-stone-500 inline-block rotate-270">2023</span>
                         </div> 
-                        <div className="flex items-end h-10 ml-2 mt-2">
-                            <span className={`w-3 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h5}`} ><span className="absolute top-14 left-23 text-[9px] text-stone-500 inline-block rotate-270">2024</span></span>
+                        <div className="relative flex items-end h-10 ml-2 mt-2">
+                            <span className={`lg:w-3 md:w-2.5 w-2.5 bg-blue-500 transition-all duration-1000 ease-out ${heightClass.h5}`} ></span>
+                            <span className="absolute top-12 left-0 text-[9px] text-stone-500 inline-block rotate-270">2024</span>
                         </div> 
                 
                 
                 </div>
             </div>
-            <div className='relative flex flex-col w-32 h-28 bg-stone-800 rounded-md shadow-lg shadow-black justify-center mt-2 ml-4'>
+            <div className='relative flex flex-col w-[45%] h-auto bg-stone-800 rounded-md shadow-lg shadow-black justify-center mt-2 ml-4'>
            
            <div className='relative'>
             <div className='flex flex-row'>

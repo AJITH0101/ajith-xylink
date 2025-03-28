@@ -11,7 +11,7 @@ const Timeline = () => {
       ];
   return (
    <>
-   <div className='relative flex flex-col w-68 h-68 bg-stone-800 rounded-md shadow-lg shadow-black mt-2'>
+   <div className='relative flex flex-col w-[100%] h-[95%] bg-stone-800 rounded-md shadow-lg shadow-black mt-5 overflow-hidden'>
     <label className='text-sm text-white mt-4 ml-4'>Our Journey</label>
 <label className='absolute top-8 text-[12px] text-stone-300  ml-8 mt-2'>All start over here</label>
 <label className='absolute top-14 text-[10px] text-stone-500  ml-8 mt-2'>Everything starts with an idea. A spark that<br/>we just could not stop thinking about.</label>
@@ -53,7 +53,7 @@ const Timeline = () => {
    </div>
 
 
-   <div className="absolute top-42 w-64 h-24 ml-4 flex overflow-hidden">
+   <div className="absolute top-42 w-[100%] h-[20%] ml-4 flex overflow-hidden">
       {images.map((src, index) => (
         <motion.img
           key={index}
@@ -62,7 +62,7 @@ const Timeline = () => {
           initial={{ x: "100%" }} // Start from the right
           animate={{ x: 0 }} // Move to final position
           transition={{ duration: 1.5, ease: "easeInOut", delay: index * 0.5 }} // Staggered effect
-          className="w-16 h-16 ml-4 rounded-md object-cover"
+          className="lg:w-16 lg:h-16 md:w-16 md:h-16 w-12 h-12 ml-4 rounded-md object-cover"
         />
       ))}
     </div>
