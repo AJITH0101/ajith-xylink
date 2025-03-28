@@ -59,29 +59,30 @@ const Trends = () => {
 
   return (
     <>
-        <div>
-        <div className='relative flex flex-col w-68 h-28 bg-stone-800 rounded-md shadow-lg shadow-black justify-center mt-2'>
-        <div>
-        <label className='absolute text-stone-300 text-3xl top-3 left-4'>37.65k</label>       
-        <div className='absolute top-4 left-34 text-blue-600'></div>
-        </div>
-        <div className='absolute left-40 top-0  w-32 h-32 flex justify-center items-center'>
+        <div className='w-[100%] h-full'>
+        <div className='relative border border-red-500 flex flex-col w-[95%] h-[40%] bg-stone-800 rounded-md shadow-lg shadow-black justify-center mt-2'>
+        <div className='absolute w-[100%] top-0 left-0 flex flex-row mt-3 justify-between'>
+        <label className='absolute w-[55%] top-0 left-0 text-stone-300 text-3xl'>37.65k</label>  
+        <div className='absolute top-0 left-30 w-[45%] h-full'>
 
-        <svg viewBox="0 0 800 600" className="w-96 h-full">
- 
-        <polyline points="150,560 250,500 230,440 210,390 290,320 370,280 380,230 400,250 450,270 500,290 550,310 600,330"
-            fill="none" 
-            stroke="red"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-        </svg> 
+           
 
-</div>
+            <svg viewBox="0 0 800 600" >
+
+            <polyline points="150,560 250,500 230,440 210,390 290,320 370,280 380,230 400,250 450,270 500,290 550,310 600,330"
+                fill="none" 
+                stroke="red"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            </svg> 
+
+        </div>   
 
 
-        <div className='absolute left-44 top-0  w-32 h-32 flex justify-center items-center'>
+
+        <div className='absolute top-0 left-0 w-[100%] h-full flex justify-center items-center'>
 
         <svg viewBox="0 0 800 600" className="w-96 h-full">
   <polyline
@@ -100,15 +101,32 @@ const Trends = () => {
  
         </div>
 
+
+
+
+
+        </div>
+
+
+        </div>
+        {/*
+
+
+        
+
         <div>
          <label className='absolute text-stone-300 text-xs top-12 left-4'>JUNE 2024</label>   
         </div>
         <div>
          <label className='absolute text-stone-500 text-[10px] top-17 left-4'>Marketing campaign<br/>effectiveness.</label>   
-        </div>
+        </div> */}
         
        
-    </div>
+    
+
+
+
+    
         <div className='flex flex-row mt-2'>
             <div className='relative flex flex-col w-32 h-28 bg-stone-800 rounded-md shadow-lg shadow-black justify-center mt-2'>
                 <div className='flex flex-row relative '>

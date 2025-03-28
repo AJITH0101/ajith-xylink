@@ -107,82 +107,113 @@ const Numbers = () => {
 
  
   return (
-    <div>
-    <div className='relative flex flex-col w-68 h-28 bg-stone-800 rounded-md shadow-lg shadow-black flex justify-center mt-2'>
-        <div>
-        <label className='absolute text-stone-300 text-2xl top-3 left-4'>${numState.strNum1}</label>
-        <label className='absolute text-xs text-stone-400 ml-1 top-4 left-21'>+18%</label>
-        <div className='absolute top-4 left-34 text-blue-600'>{graph}</div>
+    <div className='w-[100%] h-full flex justify-center items-center flex-col'>
+    <div className='flex flex-col w-[90%] h-[35%] bg-stone-800 rounded-md shadow-lg shadow-black flex justify-center mt-2'>
+        <div className='lg:w-[90%] md:w-[80%] flex flex-row justify-between mt-2'>
+            <div className='mb-[-4px]'>
+        <label className='text-stone-300 text-2xl px-4'>${numState.strNum1}</label>
+        <label className='text-xs text-stone-400'>+18%</label>
         </div>
+        <div className=' text-blue-600'>{graph}</div>
 
-        <div className='absolute left-52 top-4  w-6 h-6 bg-blue-500 rounded-full text-white flex justify-center items-center'>
+        <div className='  w-6 h-6 bg-blue-500 rounded-full text-white flex justify-center items-center mx-1'>
         {expense}
         </div>
+        </div>
+
+        
 
         <div>
-         <label className='absolute text-stone-300 text-xs top-12 left-4'>Travel Expenses</label>   
+         <label className='text-stone-300 text-xs mx-4'>Travel Expenses</label>   
         </div>
-        <div>
-         <label className='absolute text-stone-500 text-[10px] top-17 left-4'>Staff International and Domestic<br/>travel for work or meeting.</label>   
+        <div className='flex flex-col'>
+         <label className='text-stone-500 text-[10px] mx-4  mb-[-3px] '>Staff International and Domestic</label> 
+         <label className='text-stone-500 text-[10px] mx-4 '>travel for work or meeting.</label>  
         </div>
         
        
     </div>
 
-    <div className='relative flex flex-row'>
+    <div className='flex flex-row w-[90%] h-[75%]'>
 
 
 
-        <div className='flex items-center w-32 h-38 bg-stone-800 rounded-md shadow-lg shadow-black mt-3'>
-            <div className='absolute left-3 top-5  w-6 h-6 bg-yellow-600 rounded-full text-white flex justify-center items-center'>
+        <div className='flex w-[45%] h-[70%] justify-center bg-stone-800 rounded-md shadow-lg shadow-black mt-3'>
+         <div className='flex flex-col mt-3 ml-2'>  
+            <div className=' w-6 h-6 bg-yellow-600 rounded-full text-white flex justify-center items-center'>
                 {wellBeing}
             </div>
-            <div>
-                <label className='absolute text-stone-300 text-xl top-12 left-4'>${numState.strNum2}</label>
-                <label className='absolute text-xs text-stone-400 ml-1 top-13 left-16'>+18%</label>
+            <div className='mt-2'>
+                <label className='text-stone-300 text-xl'>${numState.strNum2}</label>
+                <label className='text-xs text-stone-400 ml-1'>+18%</label>
+                
             </div>
-            <div>
-            <label className='absolute text-stone-300 text-xs top-20 left-4'>Wellbeing</label>  
+            <label className='text-stone-300 text-xs'>Wellbeing</label>  
+           <div className='   leading-[12px]'>
+            
+            <label className='text-stone-500 text-[10px]'>Events or everyday wellbeing expense.</label> 
+            
             </div>
 
-            <div>
-         <label className='absolute text-stone-500 text-[10px] top-24 left-4'>Events or everyday<br/>wellbeing expense.</label>   
+               
+        </div> 
+
         </div>
+
+
+
+
+    <div className='w-[50%] h-[100%]'>
+
+    <div className='flex flex-col justify-center items-center w-full h-[32%] bg-stone-800 rounded-md shadow-lg shadow-black mt-3 ml-3'>
+
+{/* Centering the number and percentage */}
+<div className='w-[100%] flex flex-col justify-center items-center'>
+    <div className='flex flex-row justify-center items-center text-center'>
+        
+        <label className='text-stone-300 lg:text-xl md:text-md text-lg mb-[-4px]'>${numState.strNum3}</label>
+        <label className='text-xs text-stone-400 ml-1'>+18%</label> 
+                   
+    </div>
+</div> 
+
+{/* Centering the icon and label */}
+<div className='flex flex-row justify-center items-center w-full mt-2'>
+
+    <div className='w-5 h-5 bg-pink-600 rounded-full mb-2 text-white flex justify-center items-center'>
+        {beverages}
+    </div> 
+    <label className='text-stone-300 ml-3 mb-2 lg:text-xs md:text-[11px] text-xs'>Beverages</label> 
+</div>
+
+</div>
+
+
+
+
+<div className='flex flex-col justify-center items-center w-[100%] h-[32%] bg-stone-800 rounded-md shadow-lg shadow-black mt-3 ml-3'>
+
+    {/* Centering this container */}
+    <div className=' w-[50%] flex justify-center'>
+        <div className='flex flex-row  items-center text-center flex-wrap'>
+            <div className='flex flex-row '>
+            <label className='text-stone-300 lg:text-xl md:text-xl text-md'>${numState.strNum4}</label>
+            <label className='text-xs text-stone-400 mt-1'>+18%</label> 
+            </div>               
         </div>
+    </div> 
 
+    {/* Centering this container */}
+    <div className='flex flex-row  items-center w-full justify-center'>
 
-
-
-    <div>
-
-    <div className='relative flex items-center w-32 h-17 bg-stone-800 rounded-md shadow-lg shadow-black mt-3 ml-3'>
-            <div>
-                <label className='absolute text-stone-300 text-xl top-2 left-2'>${numState.strNum3}</label>
-                <label className='absolute text-xs text-stone-400 ml-1 top-3 left-19'>+18%</label>                
-            </div> 
-
-            <div className='absolute left-3 top-10  w-5 h-5 bg-pink-600 rounded-full text-white flex justify-center items-center'>
-                {beverages}
-            </div> 
-            <label className='absolute text-stone-300 text-[11px] top-10 left-9'>Beverages</label> 
+        <div className='w-5 h-5 bg-green-600 rounded-full text-white flex justify-center items-center'>
+            {groceries}
+        </div> 
+        <label className='text-stone-300 ml-2 lg:text-xs md:text-[11px] text-xs'>Groceries</label> 
     </div>
 
-    <div className='flex items-center w-32 h-17 bg-stone-800 rounded-md shadow-lg shadow-black mt-3 ml-3'>
 
-            <div>
-                <label className='absolute text-stone-300 text-xl top-24 left-37'>${numState.strNum4}</label>
-                <label className='absolute text-xs text-stone-400 ml-1 top-25 left-51'>+18%</label>                
-            </div> 
-
-            <div className='absolute left-38 top-32  w-5 h-5 bg-green-600 rounded-full text-white flex justify-center items-center'>
-                {groceries}
-            </div> 
-            <label className='absolute text-stone-300 text-[11px] top-32 left-44'>Groceries</label> 
-
-
-              
-
-    </div>
+</div>
     </div>
     
     </div>

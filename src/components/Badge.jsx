@@ -18,7 +18,9 @@ const Badge = ({image, details}) => {
      },[])
     
   return (
-    <div className='w-[100%] h-full flex justify-center items-center flex-col'>
+  
+    <div className='w-[100%] h-full flex justify-center items-center flex-col ml-1'>
+   
         <div className={`lg:w-[80%] lg:h-[60%] md:w-[80%] md:[60%] w-[100%] h-[60%] bg-stone-800 rounded-md shadow-lg shadow-black mt-1 flex justify-center  transition-transform duration-800  ${effect ? "scale-100" : "scale-90"}`}>
             <div className='w-[95%] h-[60%] rounded-lg mt-4'>
             <img src={image} alt="Desert" className="w-full h-full object-cover rounded-lg" />
@@ -40,7 +42,9 @@ const Badge = ({image, details}) => {
             </div>       
 
         </div>
-    </div>
+        </div>
+   
+
   )
 }
 

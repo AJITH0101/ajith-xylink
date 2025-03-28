@@ -31,11 +31,11 @@ const Mainbadge = () => {
 
     
   return (
-    <div className='border border-stone-700 rounded-lg lg:w-[80%]  lg:h-[100%] md:w-[80%] md:h-[100%] w-[100%] h-[100%] bg-stone-900 flex flex-row'>
-        <div className='lg:w-[30%] md:w-[50%] w-[40%] h-auto bg-stone-950 border-r border-stone-700 rounded-l-lg flex justify-center'>
+    <div className='border border-stone-700 rounded-lg lg:w-[80%] md:w-[90%] sm:w-[100%] w-[100%] lg:h-[100%]  md:h-[100%] w-[100%] h-[100%] bg-stone-900 flex flex-row'>
+        <div className='lg:w-[30%] md:w-[40%] w-[35%] h-auto bg-stone-950 border-r border-stone-700 rounded-l-lg flex justify-center'>
             <Selector/> 
         </div>
-        <div className='lg:w-[70%] md:w-[50%] w-[60%] h-auto flex justify-center '>
+        <div className='lg:w-[70%] md:w-[70%] w-[60%] h-auto flex justify-center '>
             <div className='w-[100%]'>{badgeArray[badgeSelect.stage]}  </div>        
       
         </div>

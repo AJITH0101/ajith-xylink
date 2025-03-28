@@ -54,7 +54,7 @@ const Uplift = () => {
                 </div>
              </div>   
 
-             <div className='w-[50%] h-[60%] md:w-[50%] md:h-[60%] w-[100%] h-[60%]   flex justify-center'>
+             <div className='w-[50%] h-[60%] md:w-[50%] md:h-[60%] sm:w-[90%] w-[100%] h-[60%]   flex justify-center'>
             
                       <div className='w-[100%] h-[100%] transition-transform duration-1000'style={{
                       transform: `perspective(600px) rotateX(${startBadge ? "0deg" : "-90deg"})`,
