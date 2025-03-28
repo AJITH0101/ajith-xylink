@@ -52,7 +52,7 @@ const Dummy= ({getValue,sendDataToParent}) => {
      
       
     return (
-      <div className='w-full relative h-auto transition-transform duration-500 ease-out '>  
+      <div className='w-full relative h-auto'>  
             <div
               
               style={{
@@ -63,7 +63,10 @@ const Dummy= ({getValue,sendDataToParent}) => {
               }}
   
   
-              onClick={selectPage} onMouseEnter={() => {
+              onClick={selectPage} 
+              /*
+              
+              onMouseEnter={() => {
                 if (scrollValue < 50) {
                   setBounce((prev) => ({ ...prev, bounceX: 20, bounceY: 20 }));
                 }
@@ -74,11 +77,11 @@ const Dummy= ({getValue,sendDataToParent}) => {
                 setBounce((prev) => ({ ...prev, bounceX: 0, bounceY: 0 }));
                 }            
   
-              }
+              }*/
               
             >
               <div className='absolute w-full flex justify-center ' onClick={selectPage}>
-                 <div className='w-[95%] h-[100vh] md:w-[95%] md:h-[100vh] w-[100%] h-[100vh] border border-stone-800 rounded-lg flex justify-center items-center  transition-transform duration-1000  mt-13'>
+                 <div className='w-[95%] h-[100vh] md:w-[95%] md:h-[100vh] w-[100%] h-[100vh] border border-stone-800 rounded-lg flex justify-center items-center  transition-transform duration-1000  mt-13 '>
 
                     <div className='lg:w-[93%] lg:h-[90vh] md:w-[93%] md:h-[90vh] w-[95%] h-[95vh] border border-stone-800 bg-stone-950 rounded-lg '>
 
