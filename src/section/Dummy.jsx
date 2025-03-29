@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from 'react-redux';
 import Uplift from './Uplift'
 
-const Dummy= ({getValue,sendDataToParent}) => {
+const Dummy= ({getValue,sendDataToParent,pageData}) => {
     const [scrollValue, setScrollValue] = useState(100)
     const [degreeValue, setDegreeValue] = useState(0)
     const [bounce,setBounce] = useState({
@@ -15,23 +15,20 @@ const Dummy= ({getValue,sendDataToParent}) => {
      useEffect(()=>{
    
         const handleScroll = () => {
-
+          
+          
           const scrollY = window.scrollY;       
           sendDataToParent(scrollY)   
-
-          if(scrollY>getValue){
+       
+          if(scrollY>getValue){        
           const scale = Math.max(30, Math.floor(100 - ((scrollY / 360) * (100 - 30))));
           const degree = Math.max(-45, Math.floor(0 - ((scrollY / 360) * 45)));
-
-
           setScrollValue(scale);
-          setDegreeValue(degree) 
-          
+          setDegreeValue(degree)           
           }
           else{
             setScrollValue(100);
-            setDegreeValue(0)  
-                  
+            setDegreeValue(0)                    
           }        
         
         }
@@ -57,7 +54,7 @@ const Dummy= ({getValue,sendDataToParent}) => {
               
               style={{
                 transform: `scale(${scrollValue / 100}) perspective(1000px) rotateY(${degreeValue}deg)
-                translateX(${bounce.bounceX}px) translateY(${bounce.bounceY}px)`,
+                `,
                 transition: "transform 0.5s ease-out",
                
               }}
@@ -83,8 +80,8 @@ const Dummy= ({getValue,sendDataToParent}) => {
               <div className='absolute w-full flex justify-center ' onClick={selectPage}>
                  <div className='w-[95%] h-[100vh] md:w-[95%] md:h-[100vh] w-[100%] h-[100vh] border border-stone-800 rounded-lg flex justify-center items-center  transition-transform duration-1000  mt-13 '>
 
-                    <div className='lg:w-[93%] lg:h-[90vh] md:w-[93%] md:h-[90vh] w-[95%] h-[95vh] border border-stone-800 bg-stone-950 rounded-lg '>
-
+                    <div className='lg:w-[93%] lg:h-[90vh] md:w-[93%] md:h-[90vh] w-[95%] h-[95vh] border border-stone-800 bg-stone-950 rounded-lg '>   
+                      {pageData}
                     </div>
                  </div>
               </div>

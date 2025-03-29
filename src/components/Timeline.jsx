@@ -11,7 +11,7 @@ const Timeline = () => {
       ];
   return (
    <>
-   <div className='relative flex flex-col w-[100%] h-[95%] bg-stone-800 rounded-md shadow-lg shadow-black mt-5 overflow-hidden'>
+   <div className='relative flex flex-col w-[100%] h-[95%] bg-stone-800 rounded-md shadow-lg shadow-black mt-2 overflow-hidden'>
     <label className='text-sm text-white mt-4 ml-4'>Our Journey</label>
 <label className='absolute top-8 text-[12px] text-stone-300  ml-8 mt-2'>All start over here</label>
 <label className='absolute top-14 text-[10px] text-stone-500  ml-8 mt-2'>Everything starts with an idea. A spark that<br/>we just could not stop thinking about.</label>

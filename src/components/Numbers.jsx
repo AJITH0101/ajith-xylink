@@ -144,7 +144,7 @@ const Numbers = () => {
                 {wellBeing}
             </div>
             <div className='mt-2'>
-                <label className='text-stone-300 text-xl'>${numState.strNum2}</label>
+                <label className='text-stone-300 text-md'>${numState.strNum2}</label>
                 <label className='text-xs text-stone-400 ml-1'>+18%</label>
                 
             </div>
@@ -171,7 +171,7 @@ const Numbers = () => {
 <div className='w-[100%] flex flex-col justify-center items-center'>
     <div className='flex flex-row justify-center items-center text-center'>
         
-        <label className='text-stone-300 lg:text-xl md:text-md text-lg mb-[-4px]'>${numState.strNum3}</label>
+        <label className='text-stone-300 lg:text-xl md:text-md text-md mb-[-4px]'>${numState.strNum3}</label>
         <label className='text-xs text-stone-400 ml-1'>+18%</label> 
                    
     </div>

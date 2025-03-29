@@ -2,6 +2,9 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import Firstpage from './Firstpage'
 import Dummy from './Dummy';
+import Page2 from './injectpage/Page2';
+import Page3 from './injectpage/Page3';
+import Page4 from './injectpage/Page4';
 const scrollData1 = 560
 const scrollData2 = 1120
 const scrollData3 = 1680
@@ -21,9 +24,9 @@ const Pagescroll = () => {
         const handleScroll = () => {
           const scrollY = window.scrollY;
           const changeTop = Math.max(scrollData1 - Math.floor(scrollY), 0);
-          const changeTop1 = Math.max(scrollData2- Math.floor(scrollY), 0);
+          const changeTop1 = Math.max(scrollData2 - Math.floor(scrollY), 0);
           const changeTop2 = Math.max(scrollData3 - Math.floor(scrollY), 0);
-       // console.log("change to 1",changeTop, "change top 2",changeTop1);
+
     
         setTopControl((prev)=>{
           
@@ -57,15 +60,16 @@ const Pagescroll = () => {
           <Firstpage />        
        </div>
         <div className={`w-full fixed  transition-all duration-800 ${scrollValue <= scrollData1 ? "right-0 top-0" : "right-4 top-1"} `} style={{ transform: `translateY(${topControl.top1}px)` }}>         
-          <Dummy getValue={scrollData1} sendDataToParent={handleChildData}/>        
+          <Dummy getValue={scrollData1} sendDataToParent={handleChildData} pageData={<Page2/>}/>        
        </div>
         <div className={`w-full fixed  transition-all duration-800 ${scrollValue <= scrollData2 ? "right-0 top-0" : "right-8 top-2"}`} style={{ transform: `translateY(${topControl.top2}px)` }}>         
-          <Dummy getValue={scrollData2} sendDataToParent={handleChildData}/>        
+          <Dummy getValue={scrollData2} sendDataToParent={handleChildData} pageData={<Page3/>}/>        
        </div>
 
        <div className={`w-full fixed  transition-all duration-800 ${scrollValue <= scrollData3 ? "right-0 top-0" : "right-12 top-3"}`} style={{ transform: `translateY(${topControl.top3}px)` }}>         
-          <Dummy getValue={scrollData3}  sendDataToParent={handleChildData}/>        
+          <Dummy getValue={scrollData3}  sendDataToParent={handleChildData} pageData={<Page4/>}/>        
        </div>
+     
     </>
   )
 }
