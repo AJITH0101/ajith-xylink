@@ -1,7 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const INITIAL_STATE = {
-    stage:0
+    stage:0,
+    navBar:null
 }
 
 const selectSlice = createSlice({
@@ -11,9 +12,12 @@ const selectSlice = createSlice({
         autoShift:(state,action)=>{           
             state.stage = action.payload;
             
+        },
+        menuIconAction:(state,action)=>{
+            state.navBar = action.payload
         }
     }
 })
 
-export const {autoShift} = selectSlice.actions
-export default selectSlice.reducer
+export const {autoShift, menuIconAction} = selectSlice.actions
+export default selectSlice.reducer;

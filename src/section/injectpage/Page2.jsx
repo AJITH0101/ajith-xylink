@@ -8,6 +8,7 @@ const Page2 = () => {
   return (
 <>
   <div className='w-full h-auto flex justify-center items-center flex-col text-center'>
+    
     <label className='text-white lg:text-5xl md:text-3xl text-3xl mt-8'>
       Featured and seen in
     </label>

@@ -5,6 +5,8 @@ import Dummy from './Dummy';
 import Page2 from './injectpage/Page2';
 import Page3 from './injectpage/Page3';
 import Page4 from './injectpage/Page4';
+import { useSelector } from 'react-redux';
+import { menuIconAction } from '../redux/select';
 const scrollData1 = 560
 const scrollData2 = 1120
 const scrollData3 = 1680
@@ -18,6 +20,23 @@ const Pagescroll = () => {
     
     
       const[scrollValue, setScrollValue] = useState(0)
+      const[sideBar,setSideBar] = useState(-90)
+     const navBar = useSelector((state) => state.select);
+
+
+    //  useEffect(() => {
+    //  if (navBar.navBar) {
+        
+          
+         
+       
+    //      console.log(navBar.navBar);
+    //    } else {
+    //      console.log(navBar.navBar);
+    //    }
+    // }, [navBar]); 
+
+     
 
       useEffect(()=>{
    
@@ -56,6 +75,32 @@ const Pagescroll = () => {
       };
   return (
     <>
+    <div className='relative w-full'>
+
+
+    <div
+  className="absolute top-20 right-0 fixed w-[85%] h-44 bg-black z-10  transition-transform duration-1200 block lg:hidden md:hidden opacity-90 "
+  style={{
+    transform: `perspective(1000px) rotateY(${navBar.navBar ? "0deg" : "90deg"})`,
+    transformOrigin: "right",
+    transition: "transform 0.8s ease-out",
+    boxShadow: navBar.navBar ? "0px 0px 20px rgba(0,0,0,0.15)" : "none",
+  }}
+>
+
+
+
+        
+              
+        <div className='text-stone-300 text-xl border-b border-stone-700 pb-1 ml-3 mt-1'>Products</div>
+        <div className='text-stone-300 text-xl border-b border-stone-700 pb-1 ml-3 mt-1'>Our Story</div>
+        <div className='text-stone-300 text-xl border-b border-stone-700 pb-1 ml-3 mt-1'>Career</div>
+        <div className='w-24 h-12 border border-stone-300 rounded-lg text-stone-300 text-xl flex items-center justify-center mt-3 ml-3'>Login</div>
+
+      </div>
+
+
+
      <div className='fixed  w-full'>
           <Firstpage />        
        </div>
@@ -69,7 +114,7 @@ const Pagescroll = () => {
        <div className={`w-full fixed  transition-all duration-800 ${scrollValue <= scrollData3 ? "right-0 top-0" : "right-12 top-3"}`} style={{ transform: `translateY(${topControl.top3}px)` }}>         
           <Dummy getValue={scrollData3}  sendDataToParent={handleChildData} pageData={<Page4/>}/>        
        </div>
-     
+     </div>
     </>
   )
 }

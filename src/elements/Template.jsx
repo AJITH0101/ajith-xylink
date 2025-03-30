@@ -16,7 +16,7 @@ const Template = () => {
       <div className='text-stone-300 text-[13px]'>Instagram</div>
       <div className='text-stone-500 text-[13px]'>12,480</div>
     </div>
-    <div class="w-full h-px bg-stone-600 mt-1"></div>
+    <div className="w-full h-px bg-stone-600 mt-1"></div>
 
     <div className='flex items-center space-x-6 mt-3'>
       <div className='w-2 h-2 rounded-full bg-yellow-500'></div>
@@ -24,14 +24,14 @@ const Template = () => {
       <div className='text-stone-500 text-[13px] ml-3'>6,532</div>
 
     </div>
-    <div class="w-full h-px bg-stone-600 mt-1"></div>
+    <div className="w-full h-px bg-stone-600 mt-1"></div>
 
     <div className='flex items-center space-x-6 mt-3'>
       <div className='w-2 h-2 rounded-full bg-blue-500'></div>
       <div className='text-stone-300 text-[13px]'>Organic</div>
       <div className='text-stone-500 text-[13px] ml-5'>3,269</div>
     </div>
-    <div class="w-full h-px bg-stone-600 mt-1"></div>
+    <div className="w-full h-px bg-stone-600 mt-1"></div>
 
     <div className='flex items-center space-x-6 mt-3'>
       <div className='w-2 h-2 rounded-full bg-orange-500'></div>
