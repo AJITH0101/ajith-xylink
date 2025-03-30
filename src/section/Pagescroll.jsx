@@ -27,17 +27,7 @@ const Pagescroll = () => {
       window.scrollTo(0, 0); // Scrolls to the top on page load
     }, []);
 
-    //  useEffect(() => {
-    //  if (navBar.navBar) {
-        
-          
-         
-       
-    //      console.log(navBar.navBar);
-    //    } else {
-    //      console.log(navBar.navBar);
-    //    }
-    // }, [navBar]); 
+    
 
      
 
@@ -79,31 +69,6 @@ const Pagescroll = () => {
   return (
     <>
     <div className='relative w-full'>
-
-
-    <div
-  className="absolute top-20 right-0 fixed w-[85%] h-44 bg-black z-10  transition-transform duration-1200 block lg:hidden md:hidden opacity-90 "
-  style={{
-    transform: `perspective(1000px) rotateY(${navBar.navBar ? "0deg" : "90deg"})`,
-    transformOrigin: "right",
-    transition: "transform 0.8s ease-out",
-    boxShadow: navBar.navBar ? "0px 0px 20px rgba(0,0,0,0.15)" : "none",
-  }}
->
-
-
-
-        
-              
-        <div className='text-stone-300 text-xl border-b border-stone-700 pb-1 ml-3 mt-1'>Products</div>
-        <div className='text-stone-300 text-xl border-b border-stone-700 pb-1 ml-3 mt-1'>Our Story</div>
-        <div className='text-stone-300 text-xl border-b border-stone-700 pb-1 ml-3 mt-1'>Career</div>
-        <div className='w-24 h-12 border border-stone-300 rounded-lg text-stone-300 text-xl flex items-center justify-center mt-3 ml-3'>Login</div>
-
-      </div>
-
-
-
      <div className='fixed  w-full'>
           <Firstpage />        
        </div>
