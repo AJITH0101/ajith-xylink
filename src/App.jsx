@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import Navbar from './section/Navbar'
@@ -10,6 +10,9 @@ import Careers from './section/Careers';
 
 
 const App = () => { 
+ 
+
+ 
   
 
   return (
@@ -23,7 +26,7 @@ const App = () => {
         </Routes>      
         
         </Router>
-     <Bottomsection/>    
+      
  
       </div>
   )

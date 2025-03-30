@@ -7,6 +7,7 @@ import Page3 from './injectpage/Page3';
 import Page4 from './injectpage/Page4';
 import { useSelector } from 'react-redux';
 import { menuIconAction } from '../redux/select';
+import Bottomsection from './Bottomsection';
 const scrollData1 = 560
 const scrollData2 = 1120
 const scrollData3 = 1680
@@ -22,7 +23,9 @@ const Pagescroll = () => {
       const[scrollValue, setScrollValue] = useState(0)
       const[sideBar,setSideBar] = useState(-90)
      const navBar = useSelector((state) => state.select);
-
+     useEffect(() => {
+      window.scrollTo(0, 0); // Scrolls to the top on page load
+    }, []);
 
     //  useEffect(() => {
     //  if (navBar.navBar) {
@@ -115,6 +118,7 @@ const Pagescroll = () => {
           <Dummy getValue={scrollData3}  sendDataToParent={handleChildData} pageData={<Page4/>}/>        
        </div>
      </div>
+     <Bottomsection/>  
     </>
   )
 }

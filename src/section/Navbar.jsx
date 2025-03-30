@@ -9,6 +9,7 @@ const menubar = <CgMenuGridO  size={30}/>
 
 const Navbar = () => {
   const[trigger,setTrigger] = useState(false)
+  const[underLine, setUnderLine] = useState("/")
 
   const navigate = useNavigate();
   const dispatch = useDispatch()
@@ -42,6 +43,11 @@ const Navbar = () => {
     };
   }, [dispatch,trigger]);
 
+  const handleNavigation=(path)=>{
+    navigate(path)
+    setUnderLine(path)
+  }
+
   return (
    <>
      <div  ref={navbarRef} className='fixed w-full text-white z-10'style={{ fontFamily: "Poppins, sans-serif" }}>
@@ -53,15 +59,20 @@ const Navbar = () => {
       </div>
       <div className='flex flex-row '>
                 <div className='hidden md:flex flex-row m-2'>
-                <div onClick={() => navigate("/")} className="cursor-pointer mx-3">Products</div>
-                <div onClick={() => navigate("/story")} className="cursor-pointer mx-3">Our Story</div>
-                <div onClick={() => navigate("/careers")} className="cursor-pointer mx-3">Careers</div>   
+                {/* <div onClick={() => navigate("/")} className="cursor-pointer mx-3">Products</div> */}
+               
+                <div onClick={() => handleNavigation("/")} className={`cursor-pointer mx-3 ${underLine==="/" ?  " text-blue-300" : "text-white"}`}>Products</div>
+                <div onClick={() => handleNavigation("/story")} className={`cursor-pointer mx-3  ${underLine==="/story" ?   " text-blue-300" : "text-white"}`}>Our Story</div>
+                <div onClick={() => handleNavigation("/careers")} className={`cursor-pointer mx-3 ${underLine==="/careers" ?   " text-blue-300" : "text-white"}`}>Careers</div>
+
+               
                   <div><button className='mr-28 border border-stone-500 rounded-lg w-22 h-9 ml-8'>Login</button></div>      
                 </div>
               <div className={`block lg:hidden md:hidden  m-4 ${trigger ? "text-blue-500" :"text-white"}`} onClick={menuTriggered}>{menubar}</div>
  
       </div>
       </div> 
+      
       
 
    
