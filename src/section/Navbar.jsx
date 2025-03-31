@@ -22,6 +22,7 @@ const Navbar = () => {
   const navbarRef = useRef(null); 
 
   useEffect(() => {
+   
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
         dispatch(menuIconAction(false)); // Close navbar

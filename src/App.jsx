@@ -16,13 +16,13 @@ const App = () => {
   
 
   return (
-        <div className='relative w-full h-[180rem] flex justify-center  overflow-x-hidden' >  
+        <div className='relative w-full auto flex justify-center  overflow-x-hidden' >  
         <Router>
          <Navbar/>  
          <Routes>
-          <Route path="/" element={ <Pagescroll/> } />
-          <Route path="/story" element={<Story />} />
-          <Route path="/careers" element={<Careers/>} />
+         <Route path="/" element={<div className="w-full h-[180rem]"><Pagescroll/></div>} />
+         <Route path="/story" element={<div className="w-full h-[180rem]"><Story/></div>} />
+            <Route path="/careers" element={<Careers/>} />
         </Routes>      
         
         </Router>
