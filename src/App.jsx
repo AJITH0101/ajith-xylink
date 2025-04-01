@@ -16,19 +16,17 @@ const App = () => {
   
 
   return (
-        <div className='relative w-full auto flex justify-center  overflow-x-hidden' >  
-        <Router>
-         <Navbar/>  
-         <Routes>
-         <Route path="/" element={<div className="w-full h-[180rem]"><Pagescroll/></div>} />
+    <div className='relative w-full flex justify-center overflow-x-hidden'>
+    <Router basename="/ajith-xylink">
+     <Navbar />
+      <Routes>    
          <Route path="/story" element={<div className="w-full h-[180rem]"><Story/></div>} />
-            <Route path="/careers" element={<Careers/>} />
-        </Routes>      
-        
-        </Router>
-      
- 
-      </div>
+         <Route path="/" element={<div className="w-full h-[180rem]"><Pagescroll/></div>} />
+        <Route path="/careers" element={<Careers/>} /> 
+      </Routes>
+    </Router>   
+  </div>
+  
   )
 }
 export default App
