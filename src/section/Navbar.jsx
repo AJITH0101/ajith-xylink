@@ -63,8 +63,8 @@ const Navbar = () => {
                 <div className='hidden md:flex flex-row m-2'>
                 {/* <div onClick={() => navigate("/")} className="cursor-pointer mx-3">Products</div> */}
                
-                <div onClick={() => handleNavigation("/")} className={`cursor-pointer mx-3 ${underLine==="/" ?  " text-blue-300" : "text-white"}`}>Products</div>
-                <div onClick={() => handleNavigation("/story")} className={`cursor-pointer mx-3  ${underLine==="/story" ?   " text-blue-300" : "text-white"}`}>Our Story</div>
+                <div onClick={() => handleNavigation("/story")} className={`cursor-pointer mx-3 ${underLine==="/story" ?  " text-blue-300" : "text-white"}`}>Products</div>
+                <div onClick={() => handleNavigation("/")} className={`cursor-pointer mx-3  ${underLine==="/" ?   " text-blue-300" : "text-white"}`}>Our Story</div>
                 <div onClick={() => handleNavigation("/careers")} className={`cursor-pointer mx-3 ${underLine==="/careers" ?   " text-blue-300" : "text-white"}`}>Careers</div>
 
                
@@ -88,8 +88,8 @@ const Navbar = () => {
 >
  
               
-        <div onClick={() => handleNavigation("/")}  className={`cursor-pointer mx-3 ${underLine==="/" ?  " text-blue-300" : "text-white"}`}>Products</div>
-        <div onClick={() => handleNavigation("/story")} className={`cursor-pointer mx-3  ${underLine==="/story" ?   " text-blue-300" : "text-white"}`}>Our Story</div>
+        <div onClick={() => handleNavigation("/story")}  className={`cursor-pointer mx-3 ${underLine==="/story" ?  " text-blue-300" : "text-white"}`}>Products</div>
+        <div onClick={() => handleNavigation("/")} className={`cursor-pointer mx-3  ${underLine==="/" ?   " text-blue-300" : "text-white"}`}>Our Story</div>
         <div onClick={() => handleNavigation("/careers")} className={`cursor-pointer mx-3 ${underLine==="/careers" ?   " text-blue-300" : "text-white"}`}>Career</div>
         <div className='w-24 h-12 border border-stone-300 rounded-lg text-stone-300 text-xl flex items-center justify-center mt-3 ml-3'>Login</div>
         {/* <div onClick={() => handleNavigation("/careers")} className='text-stone-300 text-lg border-b border-stone-700 pb-1 ml-3 mt-1'>Career</div> */}
